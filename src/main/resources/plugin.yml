@@ -1,0 +1,8 @@
+name: CodZombies
+main: per.ryan.zombies.CodZombiesPlugin
+version: "1.0"
+api-version: 1.17
+commands:
+  zombies:
+    description: COD Zombies minecraft edition!
+    usage: /zombies [command]
