@@ -4,18 +4,22 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class CodZombiesPlugin extends JavaPlugin {
 	
+	/** Main Plugin */
     private static CodZombiesPlugin plugin;
-//    private GameHandler game;
+    
+    /** Game Handler Executor */
+    private GameHandlerExecutor gameHandlerExecutor;
     
     @Override
     public void onEnable() {
         plugin = this;
-        getCommand("zombies").setExecutor(new GameHandler());
+        gameHandlerExecutor = new GameHandlerExecutor();
+        getCommand("zombies").setExecutor(gameHandlerExecutor);
     }
     
     @Override
     public void onDisable() {
-//        game.teardown();
+        gameHandlerExecutor.disable();
     }
     
     /**
